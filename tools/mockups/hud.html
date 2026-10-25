@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="mock.css">
+<style>
+  body { width: 1060px; height: 460px; }
+  .hudpack { grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 34px; gap: 18px; }
+</style>
+</head>
+<body>
+<div class="scene">
+  <div class="grid"></div>
+  <div class="hudpack">
+    <div class="panel">
+      <h5>ARRAYLIST · DEFAULT</h5>
+      <div class="arraylist" style="position:static;justify-items:start">
+        <div>KillAura2 <em>single 3.0</em></div>
+        <div>Scaffold2 <em>telly</em></div>
+        <div>Velocity2 <em>jump reset</em></div>
+        <div>Fly2 <em>matrix</em></div>
+        <div>Speed2 <em>vanilla</em></div>
+        <div>Hud <em>6 widgets</em></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h5>TARGET HUD</h5>
+      <div class="target" style="position:static;width:auto;margin:0;box-shadow:none">
+        <div class="top">
+          <div class="face">P</div>
+          <div class="who"><b>Player</b><span>18.5 hp · 12 m</span></div>
+        </div>
+        <div class="hp"><b></b></div>
+        <div class="armor"><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h5>POTION STATUS</h5>
+      <div class="potions">
+        <div class="potion" style="--c:#ff6b8a"><b>Speed II</b><span>02:41</span></div>
+        <div class="potion" style="--c:#5fd3ce"><b>Regeneration</b><span>00:38</span></div>
+        <div class="potion" style="--c:#8b7bff"><b>Resistance</b><span>01:12</span></div>
+        <div class="potion" style="--c:#ffb37f"><b>Fire Resistance</b><span>03:04</span></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h5>SESSION HUD</h5>
+      <div class="session">
+        <div><b>0</b><span>KILLS</span></div>
+        <div><b>0</b><span>WINS</span></div>
+        <div><b>00:00</b><span>UPTIME</span></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h5>INVENTORY HUD</h5>
+      <div class="inv">
+        <i class="f"></i><i></i><i class="f"></i><i></i><i></i><i></i><i class="f"></i><i></i><i></i>
+        <i></i><i class="f"></i><i></i><i></i><i class="f"></i><i></i><i></i><i></i><i class="f"></i>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h5>DYNAMIC ISLAND</h5>
+      <div class="di"><i></i>DioxideLiteNG · 0 modules toggled</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
