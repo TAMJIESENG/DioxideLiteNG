@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>实机画廊 — DioxideLiteNG</title>
+<meta name="description" content="DioxideLiteNG 客户端实机画面：两段录屏与三张游戏内截图，包含 HUD、模块列表、ChestStealer 日志与拆床瞬间。">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#07080d">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/gallery.css">
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem("dlx-theme");
+      if (saved === "light" || saved === "dark") {
+        document.documentElement.setAttribute("data-theme", saved);
+      } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    } catch (e) {}
+  })();
+</script>
+<noscript><style>.reel.reveal{opacity:1;transform:none;filter:none}</style></noscript>
+</head>
+<body>
+<div class="scroll-progress" role="presentation"></div>
+<a class="skip" href="#gallery">跳到画廊</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html" aria-label="返回介绍页">
+      <img src="assets/img/brand-icon.webp" alt="DioxideLiteNG 图标" width="34" height="34">
+      <span class="brand-name">DioxideLiteNG</span>
+      <span class="brand-ver">实机画廊</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-label="展开导航" aria-expanded="false" aria-controls="nav-links">
+      <span></span>
+    </button>
+    <nav class="nav-links" id="nav-links" aria-label="页面导航">
+      <a href="#video">录屏</a>
+      <a href="#stills">截图</a>
+      <a href="index.html">返回介绍</a>
+    </nav>
+
+    <button class="theme-btn" id="theme-toggle" type="button" aria-label="切换到亮色主题" aria-pressed="false" title="切换亮 / 暗主题">
+      <svg class="i-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+      </svg>
+      <svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.7"/>
+        <path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4 17 7M7 17l-1.6 1.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="gallery-hero">
+    <div class="wrap">
+      <span class="eyebrow">Gallery — 实机画面</span>
+      <h1>实机<span class="grad">画廊</span></h1>
+      <p class="lead">
+        两段录屏、三张截图，全部来自客户端在服务器里的实际运行画面：HUD、开关提示、模块列表都是真在跑的。
+        录屏静音自动播放，滚到画面里才开始，离开就暂停；想听声音点右下角的按钮。
+      </p>
+      <div class="gallery-meta">
+        <span class="chip"><span class="dot"></span>2 段录屏</span>
+        <span class="chip">3 张截图</span>
+        <span class="chip">约 15 MB · 本地播放</span>
+        <span class="chip">滚动加载</span>
+      </div>
+    </div>
+  </section>
+
+  <nav class="rail-nav" aria-label="画面索引">
+    <a href="#reel-1"><em>搭桥与靶场</em><i></i><span>01</span></a>
+    <a href="#reel-2"><em>起床战争</em><i></i><span>02</span></a>
+    <a href="#reel-3"><em>搭桥 HUD</em><i></i><span>03</span></a>
+    <a href="#reel-4"><em>开箱日志</em><i></i><span>04</span></a>
+    <a href="#reel-5"><em>拆床瞬间</em><i></i><span>05</span></a>
+  </nav>
+
+  <div class="wrap" id="gallery">
+
+    <span id="video" style="display:block;height:0"></span>
+
+    <article class="reel reveal" id="reel-1">
+      <div class="reel-head">
+        <span class="idx">01 / VIDEO</span>
+        <h2>搭桥与靶场</h2>
+        <span class="meta">38 秒 · 1280×778 · 24fps</span>
+      </div>
+      <div class="media-shell">
+        <figure class="reel-media" style="aspect-ratio:1280/778;margin:0">
+          <video class="reel-video" muted loop playsinline preload="none" tabindex="-1"
+                 poster="assets/img/poster-pvp.webp"
+                 data-src="assets/video/pvp-scaffold.mp4"
+                 aria-label="录屏：搭桥与靶场"></video>
+          <span class="reel-badge"><i></i>自动播放 · 静音</span>
+          <div class="reel-ui">
+            <button type="button" data-act="play" aria-pressed="true">
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 3.5v9M11 3.5v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              <span>暂停</span>
+            </button>
+            <button type="button" data-act="mute" aria-pressed="false">
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6.2h2.3L9 3.4v9.2L5.3 9.8H3V6.2Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M11.4 6.2 14 8.8M14 6.2l-2.6 2.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              <span>声音</span>
+            </button>
+          </div>
+        </figure>
+      </div>
+      <p class="reel-note">
+        Scaffold 的实时进度条与方块计数（<code>228 blocks left · 11.8 block/s</code>）、TargetHUD 血条、
+        右侧模块列表随开关滚动；左侧是 Session HUD 与 Inventory HUD。
+      </p>
+    </article>
+
+    <article class="reel reveal" id="reel-2">
+      <div class="reel-head">
+        <span class="idx">02 / VIDEO</span>
+        <h2>起床战争</h2>
+        <span class="meta">36 秒 · 1280×778 · 24fps</span>
+      </div>
+      <div class="media-shell">
+        <figure class="reel-media" style="aspect-ratio:1280/778;margin:0">
+          <video class="reel-video" muted loop playsinline preload="none" tabindex="-1"
+                 poster="assets/img/poster-bedwars.webp"
+                 data-src="assets/video/bedwars-demo.mp4"
+                 aria-label="录屏：起床战争"></video>
+          <span class="reel-badge"><i></i>自动播放 · 静音</span>
+          <div class="reel-ui">
+            <button type="button" data-act="play" aria-pressed="true">
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 3.5v9M11 3.5v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              <span>暂停</span>
+            </button>
+            <button type="button" data-act="mute" aria-pressed="false">
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6.2h2.3L9 3.4v9.2L5.3 9.8H3V6.2Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M11.4 6.2 14 8.8M14 6.2l-2.6 2.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              <span>声音</span>
+            </button>
+          </div>
+        </figure>
+      </div>
+      <p class="reel-note">
+        拆床与自动开箱的连续操作：Dynamic Island 显示延迟与帧率，模块列表、药水状态、ChestStealer 日志同时在刷新。
+      </p>
+    </article>
+
+    <span id="stills" style="display:block;height:0"></span>
+
+    <article class="reel reveal" id="reel-3">
+      <div class="reel-head">
+        <span class="idx">03 / STILL</span>
+        <h2>搭桥时的一屏 HUD</h2>
+        <span class="meta">1199×724 · WebP</span>
+      </div>
+      <div class="media-shell">
+        <figure class="reel-media still" style="margin:0">
+          <img alt="实机截图：开启 Scaffold 时的游戏画面与 HUD" width="1199" height="724"
+               data-src="assets/img/shot-arena.webp">
+        </figure>
+      </div>
+      <p class="reel-note">
+        Scaffold 提示条、右上 ArrayList、左侧 Session HUD（51m 28s / 420 kills）与 Inventory HUD、左下药水计时，一屏之内全部到位。
+      </p>
+    </article>
+
+    <article class="reel reveal" id="reel-4">
+      <div class="reel-head">
+        <span class="idx">04 / STILL</span>
+        <h2>开箱与状态岛</h2>
+        <span class="meta">1200×715 · WebP</span>
+      </div>
+      <div class="media-shell">
+        <figure class="reel-media still" style="margin:0">
+          <img alt="实机截图：ChestStealer 取物日志与 Dynamic Island" width="1200" height="715"
+               data-src="assets/img/shot-chest.webp">
+        </figure>
+      </div>
+      <p class="reel-note">
+        顶部 Dynamic Island 显示 ping 与 FPS，左下是 ChestStealer 的取物日志：Items Taken、Click Intervals、Total Time 逐行滚动。
+      </p>
+    </article>
+
+    <article class="reel reveal" id="reel-5">
+      <div class="reel-head">
+        <span class="idx">05 / STILL</span>
+        <h2>拆床瞬间</h2>
+        <span class="meta">1204×718 · WebP</span>
+      </div>
+      <div class="media-shell">
+        <figure class="reel-media still" style="margin:0">
+          <img alt="实机截图：拆床瞬间与模块标签" width="1204" height="718"
+               data-src="assets/img/shot-bed.webp">
+        </figure>
+      </div>
+      <p class="reel-note">
+        床方块被破坏的提示、场景里的模块标签（BedFucker / ChestStealer / Jesus-Lava），右侧模块状态仍在实时刷新。
+      </p>
+    </article>
+
+  </div>
+
+  <section class="gallery-end">
+    <div class="wrap">
+      <h2>看够了画面，回去看功能</h2>
+      <p class="lead" style="margin:0 auto 22px;max-width:52ch">
+        介绍页里有五条能力线、153 条模块清单和上手步骤。
+      </p>
+      <a class="btn btn-primary" href="index.html">返回介绍页</a>
+      <a class="btn btn-ghost" href="index.html#catalog">完整模块清单</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="foot-brand">
+      <img src="assets/img/brand-icon.webp" alt="DioxideLiteNG 图标" width="40" height="40">
+      <div>
+        <strong>DioxideLiteNG</strong>
+        <span>实机画面 · mod id dioxideliteng</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/gallery.js"></script>
+</body>
+</html>
